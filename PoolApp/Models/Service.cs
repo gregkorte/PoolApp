@@ -21,5 +21,10 @@ namespace PoolApp.Models
             this.Cost = cost;
             this.WorkUnit = workUnit;
         }
+
+        public Service()
+        {
+
+        }
     }
 }

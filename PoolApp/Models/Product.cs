@@ -39,5 +39,10 @@ namespace PoolApp.Models
             this.Cost = cost;
             this.ImageUrl = imageUrl;
         }
+
+        public Product()
+        {
+
+        }
     }
 }

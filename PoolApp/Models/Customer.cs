@@ -35,5 +35,10 @@ namespace PoolApp.Models
             this.Email = email;
             this.Notes = notes;
         }
+
+        public Customer()
+        {
+
+        }
     }
 }
