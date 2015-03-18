@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PoolApp", "PoolApp\PoolApp.csproj", "{267E43D6-4B89-440C-AC37-F8D239FB1213}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PoolApp.Tests", "PoolApp.Tests\PoolApp.Tests.csproj", "{EE93F314-BB09-429A-86EB-187D94197209}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{267E43D6-4B89-440C-AC37-F8D239FB1213}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{267E43D6-4B89-440C-AC37-F8D239FB1213}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{267E43D6-4B89-440C-AC37-F8D239FB1213}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{267E43D6-4B89-440C-AC37-F8D239FB1213}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE93F314-BB09-429A-86EB-187D94197209}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE93F314-BB09-429A-86EB-187D94197209}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE93F314-BB09-429A-86EB-187D94197209}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE93F314-BB09-429A-86EB-187D94197209}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
