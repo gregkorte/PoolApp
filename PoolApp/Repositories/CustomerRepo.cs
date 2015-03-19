@@ -1,4 +1,5 @@
-﻿using PoolApp.Models;
+﻿using PoolApp.Context;
+using PoolApp.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,39 +9,51 @@ namespace PoolApp.Repositories
 {
     public class CustomerRepo : ICustomerRepo
     {
+        private PoolAppContext _dbContext;
+
+        public CustomerRepo(string connection = "PoolAppDBContext")
+        {
+            _dbContext = new PoolAppContext(connection);
+        }
+
         public Customer GetById(int id)
         {
-            throw new NotImplementedException();
+            return _dbContext.Customers.Where(c => c.ID == id).First<Customer>();
         }
 
-        public Customer Add(Customer customer)
+        public void Add(Customer customer)
+        {
+            _dbContext.Customers.Add(customer);
+            _dbContext.SaveChanges();
+        }
+
+        public void Delete(int id)
+        {
+            var customers = _dbContext.Customers.Where(c => c.ID == id);
+            _dbContext.Customers.RemoveRange(customers);
+            _dbContext.SaveChanges();
+        }
+
+        public void Edit(Customer customer)
         {
             throw new NotImplementedException();
         }
 
-        public Customer Delete(int id)
+        public List<Customer> GetAllCustomers()
         {
-            throw new NotImplementedException();
-        }
-
-        public Customer Edit(Customer customer)
-        {
-            throw new NotImplementedException();
-        }
-
-        public List<Customer> GetAllCustomers(int id)
-        {
-            throw new NotImplementedException();
+            return _dbContext.Customers.ToList();
         }
 
         public void Clear()
         {
-            throw new NotImplementedException();
+            var customers = this.GetAllCustomers();
+            _dbContext.Customers.RemoveRange(customers);
+            _dbContext.SaveChanges();
         }
 
         public int GetCount()
         {
-            throw new NotImplementedException();
+            return _dbContext.Customers.Count<Customer>();
         }
     }
 }

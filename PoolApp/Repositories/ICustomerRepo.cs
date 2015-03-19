@@ -9,11 +9,11 @@ namespace PoolApp.Repositories
     interface ICustomerRepo
     {
         Customer GetById(int id);
-        Customer Add(Customer product);
-        Customer Edit(Customer product);
-        Customer Delete(int id);
-        List<Customer> GetAllCustomers(int id);
+        void Add(Customer customer);
+        void Edit(Customer customer);
+        void Delete(int id);
         void Clear();
         int GetCount();
+        List<Customer> GetAllCustomers();
     }
 }

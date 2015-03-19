@@ -1,4 +1,5 @@
-﻿using PoolApp.Models;
+﻿using PoolApp.Context;
+using PoolApp.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,6 +9,12 @@ namespace PoolApp.Repositories
 {
     public class ProductRepo : IProductRepo
     {
+        private PoolAppContext _dbContext;
+
+        public ProductRepo(string connection = "PoolAppDBContext")
+        {
+            _dbContext = new PoolAppContext(connection);
+        }
         public Product GetById(int id)
         {
             throw new NotImplementedException();

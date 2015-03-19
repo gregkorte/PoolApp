@@ -1,4 +1,5 @@
-﻿using PoolApp.Models;
+﻿using PoolApp.Context;
+using PoolApp.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,6 +9,13 @@ namespace PoolApp.Repositories
 {
     public class ServiceRepo : IServiceRepo
     {
+        private PoolAppContext _dbContext;
+
+        public ServiceRepo(string connection = "PoolAppDBContext")
+        {
+            _dbContext = new PoolAppContext(connection);
+        }
+
         public Service GetById(int id)
         {
             throw new NotImplementedException();
