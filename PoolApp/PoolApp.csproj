@@ -188,6 +188,12 @@
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\Service.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\CustomerRepo.cs" />
+    <Compile Include="Repositories\ICustomerRepo.cs" />
+    <Compile Include="Repositories\IProductRepo.cs" />
+    <Compile Include="Repositories\IServiceRepo.cs" />
+    <Compile Include="Repositories\ProductRepo.cs" />
+    <Compile Include="Repositories\ServiceRepo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
