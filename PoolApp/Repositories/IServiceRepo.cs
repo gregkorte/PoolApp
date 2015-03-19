@@ -14,5 +14,7 @@ namespace PoolApp.Repositories
         Service Edit(Service service);
         Service Delete(int id);
         List<Service> GetAllServices(int id);
+        void Clear();
+        int GetCount();
     }
 }

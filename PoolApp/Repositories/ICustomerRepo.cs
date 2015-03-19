@@ -13,5 +13,7 @@ namespace PoolApp.Repositories
         Customer Edit(Customer product);
         Customer Delete(int id);
         List<Customer> GetAllCustomers(int id);
+        void Clear();
+        int GetCount();
     }
 }

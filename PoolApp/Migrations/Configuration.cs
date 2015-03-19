@@ -1,11 +1,13 @@
 namespace PoolApp.Migrations
 {
+    using Microsoft.AspNet.Identity;
+    using Microsoft.AspNet.Identity.EntityFramework;
     using PoolApp.Models;
-using System;
-using System.Collections.Generic;
-using System.Data.Entity;
-using System.Data.Entity.Migrations;
-using System.Linq;
+    using System;
+    using System.Collections.Generic;
+    using System.Data.Entity;
+    using System.Data.Entity.Migrations;
+    using System.Linq;
 
     internal sealed class Configuration : DbMigrationsConfiguration<PoolApp.Context.PoolAppContext>
     {
@@ -14,10 +16,31 @@ using System.Linq;
             AutomaticMigrationsEnabled = false;
         }
 
+        private void AddUser(ApplicationDbContext context)
+        {
+            if (!(context.Users.Any(u => u.UserName == "gryph@gmail.com")))
+            {
+                var userStore = new UserStore<ApplicationUser>(context);
+                var userHandler = new UserManager<ApplicationUser>(userStore);
+                var userInsert = new ApplicationUser
+                {
+                    UserName = "gryph@gmail.com",
+                    PhoneNumber = "6156457837"
+                };
+
+                userHandler.Create(userInsert, "password");
+            }
+            context.SaveChanges();
+        }
+
         protected override void Seed(PoolApp.Context.PoolAppContext context)
         {
 
             ApplicationDbContext userContext = new ApplicationDbContext();
+
+            AddUser(userContext);
+
+            ApplicationUser user = userContext.Users.Where(x => x.UserName == "gryph@gmail.com").First();
 
             var customers = new List<Customer>
             {

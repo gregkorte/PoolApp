@@ -32,5 +32,15 @@ namespace PoolApp.Repositories
         {
             throw new NotImplementedException();
         }
+
+        public void Clear()
+        {
+            throw new NotImplementedException();
+        }
+
+        public int GetCount()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
