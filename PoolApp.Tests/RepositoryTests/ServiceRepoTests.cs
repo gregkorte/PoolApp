@@ -94,5 +94,15 @@ namespace PoolApp.Tests.RepositoryTests
             int serviceCount = service_repo.GetCount();
             Assert.AreEqual(2, serviceCount);
         }
+
+        [TestMethod]
+        public void ServiceTestEdit()
+        {
+            Service regularCleaning = service_repo.GetAllServices()[0];
+            regularCleaning.Name = "Regular Weekly Cleaning";
+            service_repo.Edit(regularCleaning);
+            Service newService = service_repo.GetAllServices()[0];
+            Assert.AreEqual("Regular Weekly Cleaning", newService.Name);
+        }
     }
 }

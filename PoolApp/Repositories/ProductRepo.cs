@@ -35,7 +35,24 @@ namespace PoolApp.Repositories
 
         public void Edit(Product product)
         {
-            throw new NotImplementedException();
+            var q = _dbContext.Products.Where(c => c.ID == product.ID);
+            foreach (Product dbProduct in q)
+            {
+                dbProduct.Name = product.Name;
+                dbProduct.Company = product.Company;
+                dbProduct.Manufacturer = product.Manufacturer;
+                dbProduct.ProductNumber = product.ProductNumber;
+                dbProduct.ManufacturerPartNumber = product.ManufacturerPartNumber;
+                dbProduct.UnitOfMeasurement = product.UnitOfMeasurement;
+                dbProduct.Description = product.Description;
+                dbProduct.Department = product.Department;
+                dbProduct.ProductLine = product.ProductLine;
+                dbProduct.Upc = product.Upc;
+                dbProduct.Cost = product.Cost;
+                dbProduct.ImageUrl = product.ImageUrl;
+            }
+
+            _dbContext.SaveChanges();
         }
 
         public List<Product> GetAllProducts()

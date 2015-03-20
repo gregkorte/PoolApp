@@ -36,7 +36,15 @@ namespace PoolApp.Repositories
 
         public void Edit(Service service)
         {
-            throw new NotImplementedException();
+            var q = _dbContext.Services.Where(c => c.ID == service.ID);
+            foreach (Service dbService in q)
+            {
+                dbService.Name = service.Name;
+                dbService.Cost = service.Cost;
+                dbService.WorkUnit = service.WorkUnit;
+            }
+
+            _dbContext.SaveChanges();
         }
 
         public List<Service> GetAllServices()

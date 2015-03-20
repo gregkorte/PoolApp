@@ -94,5 +94,15 @@ namespace PoolApp.Tests.RepositoryTests
             int ProductCount = product_repo.GetCount();
             Assert.AreEqual(2, ProductCount);
         }
+
+        [TestMethod]
+        public void ProductTestEdit()
+        {
+            Product chlorine = product_repo.GetAllProducts()[0];
+            chlorine.Upc = "0394809384094";
+            product_repo.Edit(chlorine);
+            Product newProduct = product_repo.GetAllProducts()[0];
+            Assert.AreEqual("0394809384094", newProduct.Upc);
+        }
     }
 }

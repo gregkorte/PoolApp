@@ -94,5 +94,15 @@ namespace PoolApp.Tests.RepositoryTests
             int customerCount = customer_repo.GetCount();
             Assert.AreEqual(2, customerCount);
         }
+
+        [TestMethod]
+        public void CustomerTestEdit()
+        {
+            Customer grimble = customer_repo.GetAllCustomers()[0];
+            grimble.Phone = "615-987-0989";
+            customer_repo.Edit(grimble);
+            Customer newGrimble = customer_repo.GetAllCustomers()[0];
+            Assert.AreEqual("615-987-0989", newGrimble.Phone);
+        }
     }
 }

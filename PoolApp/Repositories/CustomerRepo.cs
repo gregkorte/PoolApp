@@ -36,7 +36,22 @@ namespace PoolApp.Repositories
 
         public void Edit(Customer customer)
         {
-            throw new NotImplementedException();
+            var q = _dbContext.Customers.Where(c => c.ID == customer.ID);
+            foreach (Customer dbCustomer in q)
+            {
+                dbCustomer.RouteDay = customer.RouteDay;
+                dbCustomer.FirstName = customer.FirstName;
+                dbCustomer.LastName = customer.LastName;
+                dbCustomer.Address = customer.Address;
+                dbCustomer.City = customer.City;
+                dbCustomer.State = customer.State;
+                dbCustomer.Zipcode = customer.Zipcode;
+                dbCustomer.Phone = customer.Phone;
+                dbCustomer.Email = customer.Email;
+                dbCustomer.Notes = customer.Notes;
+            }
+
+            _dbContext.SaveChanges();
         }
 
         public List<Customer> GetAllCustomers()
