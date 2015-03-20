@@ -11,7 +11,7 @@ namespace PoolApp.Repositories
     {
         private PoolAppContext _dbContext;
 
-        public CustomerRepo(string connection = "PoolAppDBContext")
+        public CustomerRepo(string connection = "PoolAppContext")
         {
             _dbContext = new PoolAppContext(connection);
         }

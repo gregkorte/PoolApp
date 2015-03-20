@@ -11,44 +11,49 @@ namespace PoolApp.Repositories
     {
         private PoolAppContext _dbContext;
 
-        public ServiceRepo(string connection = "PoolAppDBContext")
+        public ServiceRepo(string connection = "PoolAppContext")
         {
             _dbContext = new PoolAppContext(connection);
         }
 
         public Service GetById(int id)
         {
-            throw new NotImplementedException();
+            return _dbContext.Services.Where(s => s.ID == id).First<Service>();
         }
 
-        public Service Add(Service service)
+        public void Add(Service service)
+        {
+            _dbContext.Services.Add(service);
+            _dbContext.SaveChanges();
+        }
+
+        public void Delete(int id)
+        {
+            var services = _dbContext.Services.Where(s => s.ID == id);
+            _dbContext.Services.RemoveRange(services);
+            _dbContext.SaveChanges();
+        }
+
+        public void Edit(Service service)
         {
             throw new NotImplementedException();
         }
 
-        public Service Delete(int id)
+        public List<Service> GetAllServices()
         {
-            throw new NotImplementedException();
-        }
-
-        public Service Edit(Service service)
-        {
-            throw new NotImplementedException();
-        }
-
-        public List<Service> GetAllServices(int id)
-        {
-            throw new NotImplementedException();
+            return _dbContext.Services.ToList();
         }
 
         public void Clear()
         {
-            throw new NotImplementedException();
+            var services = this.GetAllServices();
+            _dbContext.Services.RemoveRange(services);
+            _dbContext.SaveChanges();
         }
 
         public int GetCount()
         {
-            throw new NotImplementedException();
+            return _dbContext.Services.Count<Service>();
         }
     }
 }

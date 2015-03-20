@@ -7,13 +7,13 @@ namespace PoolApp.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.1-30610")]
-    public sealed partial class initialseed : IMigrationMetadata
+    public sealed partial class dbsetup : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(initialseed));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(dbsetup));
         
         string IMigrationMetadata.Id
         {
-            get { return "201503182328347_initial-seed"; }
+            get { return "201503201539494_db-setup"; }
         }
         
         string IMigrationMetadata.Source

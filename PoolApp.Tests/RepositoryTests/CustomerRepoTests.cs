@@ -9,11 +9,11 @@ namespace PoolApp.Tests.RepositoryTests
     [TestClass]
     public class CustomerRepoTests
     {
-        private static CustomerRepo customer_repo = new CustomerRepo("Name=PoolAppTest");
+        private static CustomerRepo customer_repo = new CustomerRepo("Name=PoolAppTestContext");
         private static ApplicationUser user;
 
         [ClassInitialize]
-        public static void Setup(TestContext _context)
+        public static void SetUp(TestContext _context)
         {
             helperTests.ClearDB();
             user = helperTests.firstUser();

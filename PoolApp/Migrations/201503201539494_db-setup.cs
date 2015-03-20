@@ -3,7 +3,7 @@ namespace PoolApp.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class initialseed : DbMigration
+    public partial class dbsetup : DbMigration
     {
         public override void Up()
         {

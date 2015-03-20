@@ -11,43 +11,48 @@ namespace PoolApp.Repositories
     {
         private PoolAppContext _dbContext;
 
-        public ProductRepo(string connection = "PoolAppDBContext")
+        public ProductRepo(string connection = "PoolAppContext")
         {
             _dbContext = new PoolAppContext(connection);
         }
         public Product GetById(int id)
         {
-            throw new NotImplementedException();
+            return _dbContext.Products.Where(p => p.ID == id).First<Product>();
         }
 
-        public Product Add(Product product)
+        public void Add(Product product)
+        {
+            _dbContext.Products.Add(product);
+            _dbContext.SaveChanges();
+        }
+
+        public void Delete(int id)
+        {
+            var products = _dbContext.Products.Where(p => p.ID == id);
+            _dbContext.Products.RemoveRange(products);
+            _dbContext.SaveChanges();
+        }
+
+        public void Edit(Product product)
         {
             throw new NotImplementedException();
         }
 
-        public Product Delete(int id)
+        public List<Product> GetAllProducts()
         {
-            throw new NotImplementedException();
-        }
-
-        public Product Edit(Product product)
-        {
-            throw new NotImplementedException();
-        }
-
-        public List<Product> GetAllProducts(int id)
-        {
-            throw new NotImplementedException();
+            return _dbContext.Products.ToList();
         }
 
         public void Clear()
         {
-            throw new NotImplementedException();
+            var products = this.GetAllProducts();
+            _dbContext.Products.RemoveRange(products);
+            _dbContext.SaveChanges();
         }
 
         public int GetCount()
         {
-            throw new NotImplementedException();
+            return _dbContext.Products.Count<Product>();
         }
     }
 }

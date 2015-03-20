@@ -9,11 +9,11 @@ namespace PoolApp.Repositories
     interface IProductRepo
     {
         Product GetById(int id);
-        Product Add(Product product);
-        Product Edit(Product product);
-        Product Delete(int id);
-        List<Product> GetAllProducts(int id);
+        void Add(Product product);
+        void Edit(Product product);
+        void Delete(int id);
         void Clear();
         int GetCount();
+        List<Product> GetAllProducts();
     }
 }

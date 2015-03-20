@@ -10,11 +10,11 @@ namespace PoolApp.Repositories
     interface IServiceRepo
     {
         Service GetById(int id);
-        Service Add(Service service);
-        Service Edit(Service service);
-        Service Delete(int id);
-        List<Service> GetAllServices(int id);
+        void Add(Service service);
+        void Edit(Service service);
+        void Delete(int id);
         void Clear();
         int GetCount();
+        List<Service> GetAllServices();
     }
 }
