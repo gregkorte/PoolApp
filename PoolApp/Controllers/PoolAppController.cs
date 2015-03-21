@@ -19,6 +19,4 @@ namespace PoolApp.Controllers
     //  CUSTOMER  //
     //------------//
     //GET: /api/Customers/
-    [HttpGet]
-    public System.Web.mvc.JsonResult Customers
 }

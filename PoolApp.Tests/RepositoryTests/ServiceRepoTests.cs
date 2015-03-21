@@ -81,7 +81,7 @@ namespace PoolApp.Tests.RepositoryTests
         public void ServiceTestAdd()
         {
             int serviceCount = service_repo.GetAllServices().Count;
-            Service regularCleaning = new Service("Regular Cleaning", 45, "Week");
+            Service regularCleaning = new Service("1", "Regular Cleaning", 45, "Week");
             service_repo.Add(regularCleaning);
             List<Service> newServiceList = service_repo.GetAllServices();
             Assert.AreEqual(3, newServiceList.Count);

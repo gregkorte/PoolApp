@@ -81,7 +81,7 @@ namespace PoolApp.Tests.RepositoryTests
         public void CustomerTestAdd()
         {
             int customerCount = customer_repo.GetAllCustomers().Count;
-            Customer maxwell = new Customer("Thursday", "Maxwell", "Edison", "1969 Abbey Rd", "Liverpool", "TN", "36543", "6157363456", "edisonm@silverhammer.com", "Majoring in medicine, sneaks up from behind");
+            Customer maxwell = new Customer("1", "Thursday", "Maxwell", "Edison", "1969 Abbey Rd", "Liverpool", "TN", "36543", "6157363456", "edisonm@silverhammer.com", "Majoring in medicine, sneaks up from behind");
             customer_repo.Add(maxwell);
             List<Customer> newCustomerList = customer_repo.GetAllCustomers();
             Assert.AreEqual(3, newCustomerList.Count);

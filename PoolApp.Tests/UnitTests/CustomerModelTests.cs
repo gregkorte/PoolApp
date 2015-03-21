@@ -10,7 +10,7 @@ namespace PoolApp.Tests.UnitTests
         [TestMethod]
         public void CustomerConstructorTestSuccess()
         {
-            Customer customer = new Customer("Monday", "Maxwell", "Edison", "1969 Abbey Rd", "Liverpool", "TN", "37685", "615-809-0987", "edisonm@silverhammer.com", "Majoring in medicine, sneaks up from behind.");
+            Customer customer = new Customer("1", "Monday", "Maxwell", "Edison", "1969 Abbey Rd", "Liverpool", "TN", "37685", "615-809-0987", "edisonm@silverhammer.com", "Majoring in medicine, sneaks up from behind.");
             Assert.AreEqual("Monday", customer.RouteDay);
             Assert.AreEqual("Maxwell", customer.FirstName);
             Assert.AreEqual("Edison", customer.LastName);

@@ -81,7 +81,7 @@ namespace PoolApp.Tests.RepositoryTests
         public void ProductTestAdd()
         {
             int ProductCount = product_repo.GetAllProducts().Count;
-            Product chlorineTabs = new Product("Chlorine Tabs", "ChemCo", "ChemCo", "90888", "90888", "tab", "Chlorine tablets", "Chemicals", "Chlorine", "0394809384093", 2, "https://image.poolcorp.com/images/CLU/50/CLU-50-5026_s.jpg");
+            Product chlorineTabs = new Product("1", "Chlorine Tabs", "ChemCo", "ChemCo", "90888", "90888", "tab", "Chlorine tablets", "Chemicals", "Chlorine", "0394809384093", 2, "https://image.poolcorp.com/images/CLU/50/CLU-50-5026_s.jpg");
             product_repo.Add(chlorineTabs);
             List<Product> newProductList = product_repo.GetAllProducts();
             Assert.AreEqual(3, newProductList.Count);
