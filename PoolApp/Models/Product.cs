@@ -9,6 +9,7 @@ namespace PoolApp.Models
     public class Product
     {
         public int ID { get; set; }
+        public string UserID { get; set; }
         public string Name { get; set; }
         public string Company { get; set; }
         public string Manufacturer { get; set; }
@@ -24,8 +25,9 @@ namespace PoolApp.Models
 
         public virtual Invoice Invoices { get; set; }
 
-        public Product(string name, string company, string manufacturer, string productNumber, string manufacturerPartNumber, string unitOfMeasurement, string description, string department, string productLine, string upc, decimal cost, string imageUrl)
+        public Product(string userId, string name, string company, string manufacturer, string productNumber, string manufacturerPartNumber, string unitOfMeasurement, string description, string department, string productLine, string upc, decimal cost, string imageUrl)
         {
+            this.UserID = userId;
             this.Name = name;
             this.Company = company;
             this.Manufacturer = manufacturer;

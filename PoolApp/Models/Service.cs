@@ -9,14 +9,16 @@ namespace PoolApp.Models
     public class Service
     {
         public int ID { get; set; }
+        public string UserID { get; set; }
         public string Name { get; set; }
         public decimal Cost { get; set; }
         public string WorkUnit { get; set; }
 
         public virtual Invoice Invoices { get; set; }
 
-        public Service(string name, decimal cost, string workUnit)
+        public Service(string userId, string name, decimal cost, string workUnit)
         {
+            this.UserID = userId;
             this.Name = name;
             this.Cost = cost;
             this.WorkUnit = workUnit;

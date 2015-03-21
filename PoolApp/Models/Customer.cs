@@ -9,6 +9,7 @@ namespace PoolApp.Models
     public class Customer
     {
         public int ID { get; set; }
+        public string UserID { get; set; }
         public string RouteDay { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
@@ -22,8 +23,9 @@ namespace PoolApp.Models
 
         public virtual ICollection<Invoice> Invoices { get; set; }
 
-        public Customer(string routeDay, string firstName, string lastName, string address, string city, string state, string zipcode, string phone, string email, string notes)
+        public Customer(string userId, string routeDay, string firstName, string lastName, string address, string city, string state, string zipcode, string phone, string email, string notes)
         {
+            this.UserID = userId;
             this.RouteDay = routeDay;
             this.FirstName = firstName;
             this.LastName = lastName;
