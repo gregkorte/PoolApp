@@ -59,6 +59,11 @@ namespace PoolApp.Repositories
             return _dbContext.Customers.ToList();
         }
 
+        public List<Customer> GetAllByUserId(string userID)
+        {
+            return _dbContext.Customers.Where(s => s.UserID == userID).ToList();
+        }
+
         public void Clear()
         {
             var customers = this.GetAllCustomers();

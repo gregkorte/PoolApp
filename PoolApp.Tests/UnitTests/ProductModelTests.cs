@@ -11,6 +11,7 @@ namespace PoolApp.Tests.UnitTests
         public void ProductConstructorTestSuccess()
         {
             Product product = new Product("1", "Chlorine Tabs", "ChemCo", "ChemCo", "90888", "90888", "tab", "Chlorine tablets", "Chemicals", "Chlorine", "0394809384093", 2, "https://image.poolcorp.com/images/CLU/50/CLU-50-5026_s.jpg");
+            Assert.AreEqual("1", product.UserID);
             Assert.AreEqual("Chlorine Tabs", product.Name);
             Assert.AreEqual("ChemCo", product.Company);
             Assert.AreEqual("ChemCo", product.Manufacturer);

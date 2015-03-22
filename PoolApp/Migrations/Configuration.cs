@@ -46,6 +46,7 @@ namespace PoolApp.Migrations
             {
                 new Customer
                 {
+                    UserID = user.Id,
                     RouteDay = "Monday",
                     FirstName = "Grimble",
                     LastName = "Crumble",
@@ -60,6 +61,7 @@ namespace PoolApp.Migrations
 
                 new Customer
                 {
+                    UserID = user.Id,
                     RouteDay = "Tuesday",
                     FirstName = "Arnold",
                     LastName = "Layne",
@@ -80,6 +82,7 @@ namespace PoolApp.Migrations
             {
                 new Product
                 {
+                    UserID = user.Id,
                     Name = "Chlorine Tabs",
                     Company = "ChemCo",
                     Manufacturer = "ChemCo",
@@ -96,6 +99,7 @@ namespace PoolApp.Migrations
 
                 new Product
                 {
+                    UserID = user.Id,
                     Name = "Shock",
                     Company = "Pools & Spas",
                     Manufacturer = "Poolstyle",
@@ -118,6 +122,7 @@ namespace PoolApp.Migrations
             {
                 new Service
                 {
+                    UserID = user.Id,
                     Name = "Regular Cleaning",
                     Cost = 45,
                     WorkUnit = "Week"
@@ -125,6 +130,7 @@ namespace PoolApp.Migrations
 
                 new Service
                 {
+                    UserID = user.Id,
                     Name = "One-Time Cleaning",
                     Cost = 55,
                     WorkUnit = "Per"

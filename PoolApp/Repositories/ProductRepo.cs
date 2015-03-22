@@ -60,6 +60,11 @@ namespace PoolApp.Repositories
             return _dbContext.Products.ToList();
         }
 
+        public List<Product> GetAllByUserId(string userID)
+        {
+            return _dbContext.Products.Where(s => s.UserID == userID).ToList();
+        }
+
         public void Clear()
         {
             var products = this.GetAllProducts();

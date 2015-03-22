@@ -14,6 +14,7 @@ namespace PoolApp.Repositories
         void Delete(int id);
         void Clear();
         int GetCount();
-        List<Product> GetAllProducts();
+        //List<Product> GetAllProducts();
+        List<Product> GetAllByUserId(string userID);
     }
 }
