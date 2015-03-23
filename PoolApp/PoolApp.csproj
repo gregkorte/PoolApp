@@ -29,6 +29,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -184,6 +185,10 @@
     <Compile Include="Migrations\201503201721469_test-db-setup.Designer.cs">
       <DependentUpon>201503201721469_test-db-setup.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201503231827179_db-context.cs" />
+    <Compile Include="Migrations\201503231827179_db-context.Designer.cs">
+      <DependentUpon>201503231827179_db-context.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -275,6 +280,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201503201721469_test-db-setup.resx">
       <DependentUpon>201503201721469_test-db-setup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201503231827179_db-context.resx">
+      <DependentUpon>201503231827179_db-context.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
