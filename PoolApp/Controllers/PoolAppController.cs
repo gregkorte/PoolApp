@@ -42,11 +42,11 @@ namespace PoolApp.Controllers
 
         [HttpPut]
         [Route("Customers/{userID}/Edit/{id}")]
-        public string EditCustomer([FromBody] Customer customer)
+        public HttpResponseMessage EditCustomer([FromBody] Customer customer)
         {
             customer_repo.Edit(customer);
-            var firstName = customer_repo.GetAllCustomers()[2].FirstName;
-            return firstName;
+            return new HttpResponseMessage(HttpStatusCode.OK)
+;
         }
 
         [HttpDelete]
