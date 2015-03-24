@@ -4,7 +4,7 @@
     .config(function($routeProvider){
       $routeProvider
         .when('/', {
-          templateUrl: '/Angular/index.html'
+            templateUrl: '/Angular/views/nav.html'
         })
     })
 }());
