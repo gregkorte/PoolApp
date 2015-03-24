@@ -1,6 +1,6 @@
 ﻿; (function () {
 	'use strict';
-	angular.module('test')
+	angular.module('poolApp')
 
 	.controller('testController', function ($routeParams) {
 

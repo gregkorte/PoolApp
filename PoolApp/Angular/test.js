@@ -1,4 +1,4 @@
 ﻿; (function () {
     'use strict';
-    angular.module('test', ['ngRoute'])
+    angular.module('poolApp', ['ngRoute'])
 })();

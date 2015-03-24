@@ -1,9 +1,9 @@
 ﻿; (function () {
     'use strict';
-    angular.module('test')
+    angular.module('poolApp')
     .config(function ($routeProvider) {
         $routeProvider.when('/', {
-            templateUrl: '/Angular/test.html'
+            templateUrl: '/Angular/index.html'
         })
     })
 })();
