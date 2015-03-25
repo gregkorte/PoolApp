@@ -9,20 +9,15 @@
 
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <ul>
-            <li>
-                @Html.ActionLink("PoolApp","Index","Angular")
-            </li>
-            <li>
-                @Html.Partial("_LoginPartial")
-            </li>
+    <div class="navbar navbar-inverse main-menu">
+        <h2>Realtime Invoicing</h2>
+        <ul class="login-modal">
+            <li>@Html.Partial("_LoginPartial")</li>
         </ul>
     </div>
-    <div class="container body-content">
+    <div class="container body-content cf">
         @RenderBody()
         <footer>
-            
         </footer>
     </div>
 
@@ -31,9 +26,10 @@
     @RenderSection("scripts", required: false)
     <script src="~/Scripts/angular.js"></script>
     <script src="~/Scripts/angular-route.js"></script>
-    <script src="~/Angular/js/main.constants.js"></script>
     <script src="~/Angular/js/main.js"></script>
+    @*<script src="~/Angular/js/main.constants.js"></script>*@
     <script src="~/Angular/js/config/main.config.js"></script>
-    <script src="~/Angular/test.controller.js"></script>
+    <script src="~/Angular/js/controllers/main.controller.js"></script>
+
 </body>
 </html>

@@ -1,10 +1,16 @@
 ﻿@{
     Viewbag.Title = "Index";
 }
-
-<h2>Angular Gate engaged...</h2>
-
-<section ng-app="poolApp">
+<section ng-app="poolApp" class=" ang-container cf">
     {{3+4}}
     <div ng-view></div>
+    @*<nav class="side-nav col-md-3">
+        <h2>Angular Gate engaged...</h2>
+        <ul>
+            <li>
+                <a href="/Angular/Index/#">Invoice App</a>
+            </li>
+        </ul>
+    </nav>
+    <div class="col-md-9 app-wrapper" ng-view></div>*@
 </section>

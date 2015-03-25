@@ -4,26 +4,26 @@
   angular.module('poolApp')
     .config(function($routeProvider){
       $routeProvider
-	      .when('/Angular/customers', {
+	      .when('/customers', {
 	        templateUrl: 'Angular/views/customers/customerList.html',
 	        controller: 'ListCustomersController',
 	        controllerAs: 'customerList',
 	        private: true
 	      })
-	      .when('/Angular/customers/new', {
-	        templateUrl: 'views/customers/customerForm.html',
+	      .when('/customers/new', {
+	          templateUrl: 'Angular/views/customers/customerForm.html',
 	        controller: 'CustomerController',
 	        controllerAs: 'add',
 	        private: true
 	      })
-	      .when('/Angular/customers/:id', {
-	        templateUrl: 'views/customers/customerProfile.html',
+	      .when('/customers/:id', {
+	          templateUrl: 'Angular/views/customers/customerProfile.html',
 	        controller: 'ShowCustomerController',
 	        controllerAs: 'show',
 	        private: true
 	      })
-	      .when('/Angular/customers/:id/edit', {
-	        templateUrl: 'views/customers/customerForm.html',
+	      .when('/customers/:id/edit', {
+	          templateUrl: 'Angular/views/customers/customerForm.html',
 	        controller: 'EditCustomerController',
 	        controllerAs: 'add',
 	        private: true

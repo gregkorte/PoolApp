@@ -5,25 +5,25 @@
     .config(function($routeProvider){
       $routeProvider
 	      .when('/services', {
-	        templateUrl: 'views/services/serviceList.html',
+	          templateUrl: 'Angular/views/services/serviceList.html',
 	        controller: 'ServiceController',
 	        controllerAs: 'serviceList',
 	        private: true
 	      })
 	      .when('/services/new', {
-	        templateUrl: 'views/services/serviceForm.html',
+	          templateUrl: 'Angular/views/services/serviceForm.html',
 	        controller: 'ServiceController',
 	        controllerAs: 'add',
 	        private: true
 	      })
 	      .when('/services/:id', {
-	        templateUrl: 'views/services/serviceProfile.html',
+	          templateUrl: 'Angular/views/services/serviceProfile.html',
 	        controller: 'ShowServiceController',
 	        controllerAs: 'show',
 	        private: true
 	      })
 	      .when('/services/:id/edit', {
-	        templateUrl: 'views/services/serviceForm.html',
+	          templateUrl: 'Angular/views/services/serviceForm.html',
 	        controller: 'EditServiceController',
 	        controllerAs: 'add',
 	        private: true

@@ -211,7 +211,8 @@
     <Content Include="Angular\img\logo_invoice_sm.png" />
     <Content Include="Angular\img\logo_sm.png" />
     <Content Include="Angular\img\logo_sm.svg" />
-    <Content Include="Angular\index.html" />
+    <Content Include="Angular\js\controllers\main.controller.js" />
+    <Content Include="Angular\spec\index.html" />
     <Content Include="Angular\js\auth\auth.config.js" />
     <Content Include="Angular\js\auth\auth.controller.js" />
     <Content Include="Angular\js\auth\auth.factory.js" />
@@ -231,10 +232,8 @@
     <Content Include="Angular\js\controllers\service.controller.js" />
     <Content Include="Angular\js\services\service.factory.js" />
     <Content Include="Angular\spec\tests.js" />
-    <Content Include="Angular\styles\styles.css" />
-    <Content Include="Angular\test.config.js" />
-    <Content Include="Angular\test.html" />
-    <Content Include="Angular\test.js" />
+    <Content Include="Content\styles.css" />
+    <Content Include="Angular\index.html" />
     <Content Include="Angular\views\auth\changepassword.html" />
     <Content Include="Angular\views\auth\login.html" />
     <Content Include="Angular\views\customers\customerForm.html" />
@@ -1032,7 +1031,6 @@
     <Content Include="Scripts\i18n\angular-locale_zu-za.js" />
     <Content Include="Scripts\i18n\angular-locale_zu.js" />
     <Content Include="Views\Angular\Index.cshtml" />
-    <Content Include="Angular\test.controller.js" />
     <Content Include="Scripts\errors.json" />
     <Content Include="Scripts\angular-touch.min.js.map" />
     <Content Include="Scripts\angular-sanitize.min.js.map" />
@@ -1042,6 +1040,10 @@
     <Content Include="Scripts\angular-cookies.min.js.map" />
     <Content Include="Scripts\angular-aria.min.js.map" />
     <Content Include="Scripts\angular-animate.min.js.map" />
+    <Content Include="Content\_layout.scss" />
+    <Content Include="Content\_styles.scss" />
+    <Content Include="Content\_landing.scss" />
+    <Content Include="Content\_main-menu.scss" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -1065,8 +1067,6 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
@@ -1092,8 +1092,10 @@
     <Content Include="Scripts\version.json" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Angular\styles\" />
     <Folder Include="App_Data\" />
     <Folder Include="Views\PoolApp\" />
+    <Folder Include="Views\test\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
