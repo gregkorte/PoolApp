@@ -213,29 +213,24 @@
     <Content Include="Angular\img\logo_sm.svg" />
     <Content Include="Angular\js\controllers\main.controller.js" />
     <Content Include="Angular\spec\index.html" />
-    <Content Include="Angular\js\auth\auth.config.js" />
-    <Content Include="Angular\js\auth\auth.controller.js" />
-    <Content Include="Angular\js\auth\auth.factory.js" />
     <Content Include="Angular\js\config\customers.config.js" />
     <Content Include="Angular\js\controllers\customers.controller.js" />
-    <Content Include="Angular\js\customers\customers.factory.js" />
+    <Content Include="Angular\js\services\customers.factory.js" />
     <Content Include="Angular\js\config\invoice.config.js" />
     <Content Include="Angular\js\controllers\invoice.controller.js" />
-    <Content Include="Angular\js\invoices\invoice.factory.js" />
+    <Content Include="Angular\js\services\invoice.factory.js" />
     <Content Include="Angular\js\config\main.config.js" />
     <Content Include="Angular\js\main.constants.js" />
     <Content Include="Angular\js\main.js" />
     <Content Include="Angular\js\config\products.config.js" />
     <Content Include="Angular\js\controllers\products.controller.js" />
-    <Content Include="Angular\js\products\products.factory.js" />
+    <Content Include="Angular\js\services\products.factory.js" />
     <Content Include="Angular\js\config\service.config.js" />
     <Content Include="Angular\js\controllers\service.controller.js" />
     <Content Include="Angular\js\services\service.factory.js" />
     <Content Include="Angular\spec\tests.js" />
     <Content Include="Content\styles.css" />
     <Content Include="Angular\index.html" />
-    <Content Include="Angular\views\auth\changepassword.html" />
-    <Content Include="Angular\views\auth\login.html" />
     <Content Include="Angular\views\customers\customerForm.html" />
     <Content Include="Angular\views\customers\customerList.html" />
     <Content Include="Angular\views\customers\customerProfile.html" />
@@ -1095,7 +1090,6 @@
     <Folder Include="Angular\styles\" />
     <Folder Include="App_Data\" />
     <Folder Include="Views\PoolApp\" />
-    <Folder Include="Views\test\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

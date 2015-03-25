@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Microsoft.AspNet.Identity;
 
 namespace PoolApp.Controllers
 {
@@ -12,7 +13,8 @@ namespace PoolApp.Controllers
         [Authorize]
         public ActionResult Index()
         {
-            return View();
+            //ViewBag.UserId = User.Identity.GetUserId();
+            //return View();
         }
     }
 }

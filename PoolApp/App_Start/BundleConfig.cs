@@ -27,10 +27,6 @@ namespace PoolApp
                       "~/Content/bootstrap.css",
                       "~/Content/site.css",
                       "~/Content/styles.css"));
-
-            //bundles.Add(new ScriptBundle("~/bundles/AngularCore").Include(
-            //    "~/Scripts/angular.js",
-            //    "~/Scripts/angular-route.js"));
         }
     }
 }
