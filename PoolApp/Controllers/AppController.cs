@@ -7,7 +7,7 @@ using Microsoft.AspNet.Identity;
 
 namespace PoolApp.Controllers
 {
-    public class AngularController : Controller
+    public class AppController : Controller
     {
         // GET: Angular
         [Authorize]
