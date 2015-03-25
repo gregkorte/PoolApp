@@ -1,6 +1,7 @@
 ;(function(){
   'use strict';
   angular.module('poolApp')
-    .constant('FIREBASE_URL', 'https://pool-management-app.firebaseio.com/'),
-    	('TAX_RATE', 9.25)
-}());
+    .constant('USERID', $('#userID').val())
+    .constant('TAX_RATE', 9.25)
+    .constant('API', '/api/poolApp/')
+})();

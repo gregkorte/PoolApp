@@ -14,7 +14,7 @@ namespace PoolApp.Controllers
         public ActionResult Index()
         {
             //ViewBag.UserId = User.Identity.GetUserId();
-            //return View();
+            return View();
         }
     }
 }
