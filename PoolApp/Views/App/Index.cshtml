@@ -1,17 +1,7 @@
 ﻿@{
     ViewBag.Title = "Index";
 }
-<section ng-app="poolApp" class=" ang-container cf">
-    {{3+4}}
-    <div ng-view></div>
-    <nav class="side-nav col-md-3">
-        <h2>Angular Gate engaged...</h2>
-          <ul>
-            <li>
-                <a href="/Angular/Index/#">Invoice App</a>
-            </li>
-        </ul>
-    </nav>
+<section ng-app="poolApp" class="ang-container cf">
     <div class="col-md-9 app-wrapper" ng-view></div>
 </section>
 <input type="hidden" value="@ViewBag.UserId" id="userID" />

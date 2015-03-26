@@ -214,14 +214,14 @@
     <Content Include="Angular\js\controllers\main.controller.js" />
     <Content Include="Angular\spec\index.html" />
     <Content Include="Angular\js\controllers\customers.controller.js" />
-    <Content Include="Angular\js\services\customers.factory.js" />
+    <Content Include="Angular\js\services\customer.factory.js" />
     <Content Include="Angular\js\controllers\invoice.controller.js" />
     <Content Include="Angular\js\services\invoice.factory.js" />
     <Content Include="Angular\js\config\main.config.js" />
     <Content Include="Angular\js\main.constants.js" />
     <Content Include="Angular\js\main.js" />
     <Content Include="Angular\js\controllers\products.controller.js" />
-    <Content Include="Angular\js\services\products.factory.js" />
+    <Content Include="Angular\js\services\product.factory.js" />
     <Content Include="Angular\js\controllers\service.controller.js" />
     <Content Include="Angular\js\services\service.factory.js" />
     <Content Include="Angular\spec\tests.js" />

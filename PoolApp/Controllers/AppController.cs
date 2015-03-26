@@ -13,7 +13,7 @@ namespace PoolApp.Controllers
         [Authorize]
         public ActionResult Index()
         {
-            //ViewBag.UserId = User.Identity.GetUserId();
+            ViewBag.UserId = User.Identity.GetUserId();
             return View();
         }
     }
