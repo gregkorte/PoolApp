@@ -6,37 +6,29 @@
         .when('/', {
             templateUrl: 'Angular/index.html'
         })
+
             //CUSTOMERS//
         .when('/Customers/', {
             templateUrl: 'Angular/views/customers/customerList.html',
             controller: 'ListCustomersController',
             controllerAs: 'customerList'
         })
-        .when('/Products', {
-            templateUrl: 'Angular/views/products/productList.html',
-            controller: 'ListProductsController',
-            controllerAs: 'productList'
-        })
-        .when('/Services', {
-            templateUrl: 'Angular/views/services/serviceList.html',
-            controller: 'ListServicesController',
-            controllerAs: 'serviceList'
-        })
-	    //.when('/Customers/new', {
-	    //    templateUrl: 'Angular/views/customers/customerForm.html',
-	    //    controller: 'CustomerController',
-	    //    controllerAs: 'add'
-	    //})
-	    //.when('/App#/customers/:id', {
-	    //    templateUrl: 'Angular/views/customers/customerProfile.html',
-	    //    controller: 'ShowCustomerController',
-	    //    controllerAs: 'show'
-	    //})
-	    //.when('/App#/customers/:id/edit', {
-	    //    templateUrl: 'Angular/views/customers/customerForm.html',
-	    //    controller: 'EditCustomerController',
-	    //    controllerAs: 'add'
-	    //})
+        .when('/Customers/new', {
+	        templateUrl: 'Angular/views/customers/customerForm.html',
+	        controller: 'CustomerController',
+	        controllerAs: 'add'
+	    })
+	    .when('/Customers/:id', {
+	        templateUrl: 'Angular/views/customers/customerProfile.html',
+	        controller: 'ShowCustomerController',
+	        controllerAs: 'show'
+	    })
+	    .when('/Customers/:id/edit/:id', {
+	        templateUrl: 'Angular/views/customers/customerForm.html',
+	        controller: 'EditCustomerController',
+	        controllerAs: 'add'
+	    })
+	    
         //    //INVOICES//
         //.when('/invoices', {
         //    templateUrl: 'Angular/views/invoices/invoiceList.html',
@@ -53,52 +45,54 @@
 	    //    controller: 'InvoiceProfileController',
 	    //    controllerAs: 'view'
 	    //})
-	    //.when('/invoices/:id/edit', {
+	    //.when('/invoices/:id/edit/:id', {
 	    //    templateUrl: 'Angular/views/invoices/invoiceEditForm.html',
 	    //    controller: 'ModifyInvoiceController',
 	    //    controllerAs: 'modify'
 	    //})
-        //    //PRODUCTS//
-        //.when('/products', {
-        //    templateUrl: 'Angular/views/products/productList.html',
-        //    controller: 'ProductController',
-        //    controllerAs: 'productList'
-        //})
-	    //.when('/products/new', {
-	    //    templateUrl: 'Angular/views/products/productForm.html',
-	    //    controller: 'ProductController',
-	    //    controllerAs: 'add'
-	    //})
-	    //.when('/products/:id', {
-	    //    templateUrl: 'Angular/views/products/productProfile.html',
-	    //    controller: 'ShowProductController',
-	    //    controllerAs: 'show'
-	    //})
-	    //.when('/products/:id/edit', {
-	    //    templateUrl: 'Angular/views/products/productForm.html',
-	    //    controller: 'EditProductController',
-	    //    controllerAs: 'add'
-	    //})
-        //    //SERVICES//
-        //.when('/services', {
-        //    templateUrl: 'Angular/views/services/serviceList.html',
-        //    controller: 'ServiceController',
-        //    controllerAs: 'serviceList'
-        //})
-	    //  .when('/services/new', {
-	    //      templateUrl: 'Angular/views/services/serviceForm.html',
-	    //      controller: 'ServiceController',
-	    //      controllerAs: 'add'
-	    //  })
-	    //  .when('/services/:id', {
-	    //      templateUrl: 'Angular/views/services/serviceProfile.html',
-	    //      controller: 'ShowServiceController',
-	    //      controllerAs: 'show'
-	    //  })
-	    //  .when('/services/:id/edit', {
-	    //      templateUrl: 'Angular/views/services/serviceForm.html',
-	    //      controller: 'EditServiceController',
-	    //      controllerAs: 'add'
-	    //  })
+
+            //PRODUCTS//
+        .when('/Products', {
+            templateUrl: 'Angular/views/products/productList.html',
+            controller: 'ListProductsController',
+            controllerAs: 'productList'
+        })
+	    .when('/Products/new', {
+	        templateUrl: 'Angular/views/products/productForm.html',
+	        controller: 'ProductController',
+	        controllerAs: 'add'
+	    })
+	    .when('/Products/:id', {
+	        templateUrl: 'Angular/views/products/productProfile.html',
+	        controller: 'ShowProductController',
+	        controllerAs: 'show'
+	    })
+	    .when('/Products/:id/edit/:id', {
+	        templateUrl: 'Angular/views/products/productForm.html',
+	        controller: 'EditProductController',
+	        controllerAs: 'add'
+	    })
+
+            //SERVICES//
+        .when('/Services', {
+            templateUrl: 'Angular/views/services/serviceList.html',
+            controller: 'ListServicesController',
+            controllerAs: 'serviceList'
+        })
+        .when('/Services/new', {
+	        templateUrl: 'Angular/views/services/serviceForm.html',
+	        controller: 'ServiceController',
+	        controllerAs: 'add'
+        })
+        .when('/Services/:id', {
+	        templateUrl: 'Angular/views/services/serviceProfile.html',
+	        controller: 'ShowServiceController',
+	        controllerAs: 'show'
+        })
+        .when('/Services/:id/edit', {
+	        templateUrl: 'Angular/views/services/serviceForm.html',
+	        controller: 'EditServiceController',
+	        controllerAs: 'add'
+        })
     })
 }());
