@@ -2,9 +2,25 @@
 	'use strict';
 
 	angular.module('poolApp')
-    .controller('ListProductsController', function($routeParams){
+    //.controller('ListProductsController', function($routeParams){
+    //    var vm = this;
+    //    vm.test = "Product controller works!";
+    //})
+
+
+    .controller('ListProductsController', function ($routeParams, productFactory, $location) {
         var vm = this;
-        vm.test = "Product controller works!";
+        productFactory.getProducts(function (products) {
+            vm.products = products;
+        })
+
+        vm.removeProduct = function (id, product) {
+            productFactory.deleteProduct(product.ID, function (productID) {
+                productFactory.getProductss(function (products) {
+                    vm.products = products;
+                })
+            });
+        }
     })
 }());
 	//	.controller('ShowProductController', function($routeParams, productFactory){

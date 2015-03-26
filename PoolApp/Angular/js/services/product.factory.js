@@ -1,76 +1,64 @@
-;(function(){
-  'use strict';
-  angular.module('poolApp')
-    .factory('productFactory', function($rootScope, FIREBASE_URL, $http, $location){
+; (function () {
+    'use strict';
+    angular.module('poolApp')
+    .factory('productFactory', function ($http, USERID, API) {
+        function _getProducts(call) {
+            var url = API + 'Products/' + USERID;
+            console.log(url);
+            $http.get(url)
+            .success(function (data) {
+                console.log(data.Data.products);
+                call(data.Data.products);
+            })
+            .error(function (err) {
+                console.log('get product error: ', err)
+            })
+        }
 
-      function _productUrl(id){
-        if (id) {
-          return FIREBASE_URL + '/users/' + $rootScope.user.uid +
-            '/products/' + id + '.json?auth=' + $rootScope.user.token;
-        } else {
-            return FIREBASE_URL + '/users/' + $rootScope.user.uid +
-            '/products.json?auth=' +  $rootScope.user.token;
-          }
-      }
+        function _postProduct(product, call) {
+            var url = API + 'Products/' + USERID;
+            console.log(url);
+            $http.get(url, product)
+            .success(function (status) {
+                console.log(status);
+                call(status);
+            })
+            .error(function (err) {
+                console.log('post product error: ', err)
+            })
+        }
 
-      function getProduct(id, cb){
-        $http.get(_productUrl(id))
-          .success(function(data){
-            cb(data);
-          })
-          .error(function(err){
-            console.log('Could not get product');
-          });
-      }
+        function _putProduct(product, call) {
+            var url = API + 'Products/' + USERID + '/Edit/' + product.ID;
+            console.log(url);
+            $http.put(url)
+            .success(function (product) {
+                console.log("edit sent");
+                call(product);
+            })
+            .error(function (err) {
+                console.log('edit product error: ', err)
+            })
+        }
 
-      function editProduct(id, product){
-        $http.put(_productUrl(id), product)
-          .success(function(data){
-            $location.path('/products' /*+ id*/);
-          })
-          .error(function(err){
-            console.log('Could not edit product');
-          });
-      }
+        function _deleteProduct(id, call) {
+            var url = API + 'Products/' + USERID + '/Delete/' + id;
+            console.log(url);
+            $http.delete(url)
+            .success(function (status) {
+                console.log(status);
+                call();
+            })
+            .error(function (err) {
+                console.log('delete product error: ', err)
+            })
+        }
 
-      function getAllProducts(cb){
-        $http.get(_productUrl())
-          .success(function(data){
-            cb(data);
-          })
-          .error(function(err){
-            console.log('Could not get all products');
-          });
-      }
-
-      function createProduct(product, cb){
-        $http.post(_productUrl(), product)
-          .success(function(data){
-            cb(data);
-            $location.path('/products');
-          })
-          .error(function(err){
-            console.log('Could not create product');
-          });
-      }
-
-      function deleteProduct(productId, cb) {
-        $http.delete(_productUrl(productId))
-          .success(function(){
-            cb();
-            $location.path('/products');
-          })
-          .error(function(err){
-            console.log('Could not delete product');
-          });
-      }
-
-      return {
-        getProduct: getProduct,
-        editProduct: editProduct,
-        getAllProducts: getAllProducts,
-        createProduct: createProduct,
-        deleteProduct: deleteProduct
-      };
+        return {
+            getProducts: _getProducts,
+            postProduct: _postProduct,
+            putProduct: _putProduct,
+            deleteProduct: _deleteProduct
+        };
     })
 }());
