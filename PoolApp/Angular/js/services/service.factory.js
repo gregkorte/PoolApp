@@ -1,76 +1,64 @@
-;(function(){
-  'use strict';
-  angular.module('poolApp')
-    .factory('serviceFactory', function($rootScope, FIREBASE_URL, $http, $location){
+; (function () {
+    'use strict';
+    angular.module('poolApp')
+    .factory('serviceFactory', function ($http, USERID, API) {
+        function _getServices(call) {
+            var url = API + 'Services/' + USERID;
+            console.log(url);
+            $http.get(url)
+            .success(function (data) {
+                console.log(data.Data.services);
+                call(data.Data.services);
+            })
+            .error(function (err) {
+                console.log('get service error: ', err)
+            })
+        }
 
-      function _serviceUrl(id){
-        if (id) {
-          return FIREBASE_URL + '/users/' + $rootScope.user.uid +
-            '/services/' + id + '.json?auth=' + $rootScope.user.token;
-        } else {
-            return FIREBASE_URL + '/users/' + $rootScope.user.uid +
-            '/services.json?auth=' +  $rootScope.user.token;
-          }
-      }
+        function _postService(service, call) {
+            var url = API + 'Services/' + USERID;
+            console.log(url);
+            $http.get(url, service)
+            .success(function (status) {
+                console.log(status);
+                call(status);
+            })
+            .error(function (err) {
+                console.log('post service error: ', err)
+            })
+        }
 
-      function getService(id, cb){
-        $http.get(_serviceUrl(id))
-          .success(function(data){
-            cb(data);
-          })
-          .error(function(err){
-            console.log('Could not get service');
-          });
-      }
+        function _putService(service, call) {
+            var url = API + 'Services/' + USERID + '/Edit/' + service.ID;
+            console.log(url);
+            $http.put(url)
+            .success(function (service) {
+                console.log("edit sent");
+                call(service);
+            })
+            .error(function (err) {
+                console.log('edit service error: ', err)
+            })
+        }
 
-      function editService(id, service){
-        $http.put(_serviceUrl(id), service)
-          .success(function(data){
-            $location.path('/services');
-          })
-          .error(function(err){
-            console.log('Could not edit service');
-          });
-      }
+        function _deleteService(id, call) {
+            var url = API + 'Services/' + USERID + '/Delete/' + id;
+            console.log(url);
+            $http.delete(url)
+            .success(function (status) {
+                console.log(status);
+                call();
+            })
+            .error(function (err) {
+                console.log('delete service error: ', err)
+            })
+        }
 
-      function getAllServices(cb){
-        $http.get(_serviceUrl())
-          .success(function(data){
-            cb(data);
-          })
-          .error(function(err){
-            console.log('Could not get all services');
-          });
-      }
-
-      function createService(service, cb){
-        $http.post(_serviceUrl(), service)
-          .success(function(data){
-            cb(data);
-            $location.path('/services');
-          })
-          .error(function(err){
-            console.log('Could not create service');
-          });
-      }
-
-      function deleteService(serviceId, cb) {
-        $http.delete(_serviceUrl(serviceId))
-          .success(function(){
-            cb();
-            $location.path('/services');
-          })
-          .error(function(err){
-            console.log('Could not delete service');
-          });
-      }
-
-      return {
-        getService: getService,
-        editService: editService,
-        getAllServices: getAllServices,
-        createService: createService,
-        deleteService: deleteService
-      };
+        return {
+            getServices: _getServices,
+            postService: _postService,
+            putService: _putService,
+            deleteService: _deleteService
+        };
     })
 }());

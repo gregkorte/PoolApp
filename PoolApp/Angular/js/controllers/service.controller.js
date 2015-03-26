@@ -2,9 +2,24 @@
 	'use strict';
 
 	angular.module('poolApp')
-    .controller('ListServicesController', function ($routeParams) {
+    //.controller('ListServicesController', function ($routeParams) {
+    //    var vm = this;
+    //    vm.test = "Service controller works!";
+    //})
+
+    .controller('ListServicesController', function ($routeParams, serviceFactory, $location) {
         var vm = this;
-        vm.test = "Service controller works!";
+        serviceFactory.getServices(function (services) {
+            vm.services = services;
+        })
+
+        vm.removeService = function (id, service) {
+            serviceFactory.deleteService(service.ID, function (serviceID) {
+                serviceFactory.getServices(function (services) {
+                    vm.services = services;
+                })
+            });
+        }
     })
 }());
 	//	.controller('ShowServiceController', function($routeParams, serviceFactory){
