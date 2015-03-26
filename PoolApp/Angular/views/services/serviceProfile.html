@@ -1,14 +1,16 @@
 <div class="customer_profile">
-	<h1>{{show.service.name}}</h1>
+	<h1>{{show.service.Name}}</h1>
 	<table class="table table-condensed">
 		<thead>
-			<th>Cost</th>
-			<th>Work Unit</th>
+            <tr>
+                <th>Cost</th>
+                <th>Work Unit</th>
+            </tr>
 		</thead>
 		<tbody>
 			<tr>
-				<td>{{show.service.cost | currency}}</td>
-				<td>{{show.service.workUnit}}</td>
+				<td>{{show.service.Cost | currency}}</td>
+				<td>{{show.service.WorkUnit}}</td>
 			</tr>
 		</tbody>
 	</table>

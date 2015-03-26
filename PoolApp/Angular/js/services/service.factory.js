@@ -4,14 +4,23 @@
     .factory('serviceFactory', function ($http, USERID, API) {
         function _getServices(call) {
             var url = API + 'Services/' + USERID;
-            console.log(url);
             $http.get(url)
             .success(function (data) {
-                console.log(data.Data.services);
                 call(data.Data.services);
             })
             .error(function (err) {
                 console.log('get service error: ', err)
+            })
+        }
+
+        function _getServiceById(id, call) {
+            var url = API + 'Services/' + USERID + '/' + id;
+            $http.get(url)
+            .success(function (data) {
+                call(data.Data.service);
+            })
+            .error(function (err) {
+                console.log('get service by id error', err)
             })
         }
 
@@ -56,6 +65,7 @@
 
         return {
             getServices: _getServices,
+            getServiceById: _getServiceById,
             postService: _postService,
             putService: _putService,
             deleteService: _deleteService

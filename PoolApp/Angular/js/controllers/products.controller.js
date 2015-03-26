@@ -2,12 +2,6 @@
 	'use strict';
 
 	angular.module('poolApp')
-    //.controller('ListProductsController', function($routeParams){
-    //    var vm = this;
-    //    vm.test = "Product controller works!";
-    //})
-
-
     .controller('ListProductsController', function ($routeParams, productFactory, $location) {
         var vm = this;
         productFactory.getProducts(function (products) {
@@ -22,14 +16,16 @@
             });
         }
     })
+
+    .controller('ShowProductController', function ($routeParams, productFactory) {
+        var vm = this;
+        productFactory.getProductById($routeParams.id, function (product) {
+            console.log(product)
+            vm.product = product;
+        })
+    });
 }());
-	//	.controller('ShowProductController', function($routeParams, productFactory){
-    //  var vm = this;
-    //  var id = $routeParams.id;
-    //  productFactory.getProduct(id, function(data){
-    //    vm.product = data;
-    //  });
-    //})
+	
     //.controller('EditProductController', function($routeParams, productFactory){
     //  var vm = this;
     //  var id = $routeParams.id;

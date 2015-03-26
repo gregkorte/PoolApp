@@ -18,7 +18,7 @@
 	        controller: 'CustomerController',
 	        controllerAs: 'add'
 	    })
-	    .when('/Customers/:id', {
+	    .when('/Customers/:id/:id', {
 	        templateUrl: 'Angular/views/customers/customerProfile.html',
 	        controller: 'ShowCustomerController',
 	        controllerAs: 'show'
@@ -40,7 +40,7 @@
 	    //    controller: 'InvoiceController',
 	    //    controllerAs: 'modify'
 	    //})
-	    //.when('/invoices/:id', {
+	    //.when('/invoices/:id/:id', {
 	    //    templateUrl: 'Angular/views/invoices/invoiceProfile.html',
 	    //    controller: 'InvoiceProfileController',
 	    //    controllerAs: 'view'
@@ -62,7 +62,7 @@
 	        controller: 'ProductController',
 	        controllerAs: 'add'
 	    })
-	    .when('/Products/:id', {
+	    .when('/Products/:id/:id', {
 	        templateUrl: 'Angular/views/products/productProfile.html',
 	        controller: 'ShowProductController',
 	        controllerAs: 'show'
@@ -84,12 +84,12 @@
 	        controller: 'ServiceController',
 	        controllerAs: 'add'
         })
-        .when('/Services/:id', {
+        .when('/Services/:userId/:id', {
 	        templateUrl: 'Angular/views/services/serviceProfile.html',
 	        controller: 'ShowServiceController',
 	        controllerAs: 'show'
         })
-        .when('/Services/:id/edit', {
+        .when('/Services/:userId/edit/:id', {
 	        templateUrl: 'Angular/views/services/serviceForm.html',
 	        controller: 'EditServiceController',
 	        controllerAs: 'add'

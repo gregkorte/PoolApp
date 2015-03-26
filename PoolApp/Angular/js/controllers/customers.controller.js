@@ -2,12 +2,6 @@
 	'use strict';
 
 	angular.module('poolApp')
-    //.controller('ListCustomersController', function ($routeParams, customerFactory) {
-    //    var vm = this;
-    //    vm.test = "Customer controller works!";
-    //})
-
-
     .controller('ListCustomersController', function ($routeParams, customerFactory, $location) {
         var vm = this;
         customerFactory.getCustomers(function (customers) {
@@ -19,10 +13,19 @@
                 customerFactory.getCustomers(function (customers) {
                     vm.customers = customers;
                 })
-            });
+            })
         }
     })
+
+    .controller('ShowCustomerController', function($routeParams, customerFactory){
+        var vm = this;
+        customerFactory.getCustomerById($routeParams.id, function (customer) {
+            vm.customer = customer;
+        })
+     })
 }());
+
+
     //.controller('CustomerController', function(customerFactory){
     //  var vm = this;
 
@@ -58,12 +61,6 @@
     //    customerFactory.editCustomer(id, vm.newCustomer);
     //  };
     //})
-    //.controller('ShowCustomerController', function($routeParams, customerFactory){
-    //  var vm = this;
-    //  var id = $routeParams.id;
-    //  customerFactory.getCustomer(id, function(data){
-    //    vm.customer = data;
-    //  });
-    //})
+    
         //Dependency array syntax for deployment//
     

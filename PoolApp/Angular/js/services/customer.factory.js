@@ -4,14 +4,23 @@
     .factory('customerFactory', function($http, USERID, API) {
         function _getCustomers(call) {
             var url = API + 'Customers/' + USERID;
-            console.log(url);
             $http.get(url)
             .success(function (data) {
-                console.log(data.Data.customers);
                 call(data.Data.customers);
             })
             .error(function(err) {
                 console.log('get customer error: ', err)
+            })
+        }
+
+        function _getCustomerById(id, call) {
+            var url = API + 'Customers/' + USERID + '/' + id;
+            $http.get(url)
+            .success(function (data) {
+                call(data.Data.customer);
+            })
+            .error(function (err) {
+                console.log('get customer by id error', err)
             })
         }
 
@@ -56,6 +65,7 @@
 
       return {
         getCustomers: _getCustomers,
+        getCustomerById: _getCustomerById,
         postCustomer: _postCustomer,
         putCustomer: _putCustomer,
         deleteCustomer: _deleteCustomer

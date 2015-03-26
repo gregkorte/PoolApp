@@ -4,14 +4,23 @@
     .factory('productFactory', function ($http, USERID, API) {
         function _getProducts(call) {
             var url = API + 'Products/' + USERID;
-            console.log(url);
             $http.get(url)
             .success(function (data) {
-                console.log(data.Data.products);
                 call(data.Data.products);
             })
             .error(function (err) {
                 console.log('get product error: ', err)
+            })
+        }
+
+        function _getProductById(id, call) {
+            var url = API + 'Products/' + USERID + '/' + id;
+            $http.get(url)
+            .success(function (data) {
+                call(data.Data.product);
+            })
+            .error(function (err) {
+                console.log('get product by id error', err)
             })
         }
 
@@ -56,6 +65,7 @@
 
         return {
             getProducts: _getProducts,
+            getProductById: _getProductById,
             postProduct: _postProduct,
             putProduct: _putProduct,
             deleteProduct: _deleteProduct
