@@ -137,8 +137,8 @@ namespace PoolApp.Migrations
                 }
             };
 
-                services.ForEach(sd => context.Services.AddOrUpdate(s => s.Name, sd));
-                context.SaveChanges();
+            services.ForEach(sd => context.Services.AddOrUpdate(s => s.Name, sd));
+            context.SaveChanges();
         }
     }
 }
