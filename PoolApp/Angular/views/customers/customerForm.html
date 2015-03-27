@@ -1,44 +1,44 @@
 <div class="formContainer">
-<form name="newCustomerForm" ng-submit="newCustomerForm.$valid && add.addNewCustomer()" novalidate>
+<form name="newCustomerForm" ng-submit="newCustomerForm.$valid && add.NewCustomer()" novalidate>
 <div class="form-group">
   <label class="control-label">Route Day:</label>
-  <input type="text" class="form-control shorten" ng-model="add.newCustomer.routeDay" />
+  <input type="text" class="form-control shorten" ng-model="add.newCustomer.RouteDay" />
 </div>
-<div class="form-group" ng-class="{'has-error': !add.newCustomer.firstName}">
+<div class="form-group" ng-class="{'has-error': !add.newCustomer.FirstName}">
   <label class="control-label">First Name:</label>
-  <input type="text" class="form-control shorten" ng-model="add.newCustomer.firstName" required />
+  <input type="text" class="form-control shorten" ng-model="add.newCustomer.FirstName" required />
 </div>
-<div class="form-group" ng-class="{'has-error': !add.newCustomer.lastName}">
+<div class="form-group" ng-class="{'has-error': !add.newCustomer.LastName}">
   <label class="control-label">Last Name:</label>
-  <input type="text" class="form-control shorten" ng-model="add.newCustomer.lastName" required />
+  <input type="text" class="form-control shorten" ng-model="add.newCustomer.LastName" required />
 </div>
-<div class="form-group" ng-class="{'has-error': !add.newCustomer.address}">
+<div class="form-group" ng-class="{'has-error': !add.newCustomer.Address}">
   <label class="control-label">Address:</label>
-  <input type="text" class="form-control shorten" ng-model="add.newCustomer.address" />
+  <input type="text" class="form-control shorten" ng-model="add.newCustomer.Address" />
 </div>
-<div class="form-group" ng-class="{'has-error': !add.newCustomer.city}">
+<div class="form-group" ng-class="{'has-error': !add.newCustomer.City}">
   <label class="control-label">City:</label>
-  <input type="text" class="form-control shorten" ng-model="add.newCustomer.city" />
+  <input type="text" class="form-control shorten" ng-model="add.newCustomer.City" />
 </div>
-<div class="form-group" ng-class="{'has-error': !add.newCustomer.state}">
+<div class="form-group" ng-class="{'has-error': !add.newCustomer.State}">
   <label class="control-label">State:</label>
-  <input type="text" class="form-control shorten" ng-model="add.newCustomer.state" />
+  <input type="text" class="form-control shorten" ng-model="add.newCustomer.State" />
 </div>
-<div class="form-group" ng-class="{'has-error': !add.newCustomer.zipcode}">
+<div class="form-group" ng-class="{'has-error': !add.newCustomer.Zipcode}">
   <label class="control-label">Zip Code:</label>
-  <input type="text" maxlength="5" class="form-control shorten" ng-model="add.newCustomer.zipcode" />
+  <input type="text" maxlength="5" class="form-control shorten" ng-model="add.newCustomer.Zipcode" />
 </div>
-<div class="form-group" ng-class="{'has-error': !add.newCustomer.phone}">
+<div class="form-group" ng-class="{'has-error': !add.newCustomer.Phone}">
   <label class="control-label">Phone:</label>
-  <input type="text" class="form-control shorten" ng-model="add.newCustomer.phone" />
+  <input type="text" class="form-control shorten" ng-model="add.newCustomer.Phone" />
 </div>
 <div class="form-group">
   <label class="control-label">Email:</label>
-  <input type="email" class="form-control shorten" ng-model="add.newCustomer.email" />
+  <input type="Email" class="form-control shorten" ng-model="add.newCustomer.Email" />
 </div>
 <div class="form-group">
   <label class="control-label">Notes:</label>
-  <textarea type="text" class="form-control shorten" ng-model="add.newCustomer.notes" />
+  <textarea type="text" class="form-control shorten" ng-model="add.newCustomer.Notes" />
 </div>
   <input class="btn btn-primary btn-lg btn-block" type="submit" value="Save" ng-disabled="newCustomerForm.$invalid" />
 </form>

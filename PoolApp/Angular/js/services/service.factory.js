@@ -26,11 +26,9 @@
 
         function _postService(service, call) {
             var url = API + 'Services/' + USERID;
-            console.log(url);
-            $http.get(url, service)
+            $http.post(url, service)
             .success(function (status) {
-                console.log(status);
-                call(status);
+                call(service);
             })
             .error(function (err) {
                 console.log('post service error: ', err)
@@ -38,7 +36,7 @@
         }
 
         function _putService(service, call) {
-            var url = API + 'Services/' + USERID + '/Edit/' + service.ID;
+            var url = API + 'Services/' + USERID + '/edit/' + service.ID;
             console.log(url);
             $http.put(url)
             .success(function (service) {
@@ -51,11 +49,9 @@
         }
 
         function _deleteService(id, call) {
-            var url = API + 'Services/' + USERID + '/Delete/' + id;
-            console.log(url);
+            var url = API + 'Services/' + USERID + '/delete/' + id;
             $http.delete(url)
             .success(function (status) {
-                console.log(status);
                 call();
             })
             .error(function (err) {

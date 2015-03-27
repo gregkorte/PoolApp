@@ -52,10 +52,8 @@
 
         function _deleteProduct(id, call) {
             var url = API + 'Products/' + USERID + '/Delete/' + id;
-            console.log(url);
             $http.delete(url)
             .success(function (status) {
-                console.log(status);
                 call();
             })
             .error(function (err) {

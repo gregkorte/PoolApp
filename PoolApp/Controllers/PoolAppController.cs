@@ -43,7 +43,7 @@ namespace PoolApp.Controllers
         }
 
         [HttpPut]
-        [Route("Customers/{userID}/Edit/{id}")]
+        [Route("Customers/{userID}/edit/{id}")]
         public HttpResponseMessage EditCustomer([FromBody] Customer customer)
         {
             customer_repo.Edit(customer);
@@ -52,7 +52,7 @@ namespace PoolApp.Controllers
         }
 
         [HttpDelete]
-        [Route("Customers/{userID}/Delete/{id}")]
+        [Route("Customers/{userID}/delete/{id}")]
         public HttpResponseMessage DeleteCustomer(int id)
         {
             customer_repo.Delete(id);
@@ -100,7 +100,7 @@ namespace PoolApp.Controllers
         }
 
         [HttpPut]
-        [Route("Products/{userID}/Edit/{id}")]
+        [Route("Products/{userID}/edit/{id}")]
         public HttpResponseMessage EditProduct([FromBody] Product product)
         {
             product_repo.Edit(product);
@@ -109,7 +109,7 @@ namespace PoolApp.Controllers
         }
 
         [HttpDelete]
-        [Route("Products/{userID}/Delete/{id}")]
+        [Route("Products/{userID}/delete/{id}")]
         public HttpResponseMessage DeleteProduct(int id)
         {
             product_repo.Delete(id);
@@ -157,7 +157,7 @@ namespace PoolApp.Controllers
         }
 
         [HttpPut]
-        [Route("Services/{userID}/Edit/{id}")]
+        [Route("Services/{userID}/edit/{id}")]
         public HttpResponseMessage EditService([FromBody] Service service)
         {
             service_repo.Edit(service);
@@ -166,7 +166,7 @@ namespace PoolApp.Controllers
         }
 
         [HttpDelete]
-        [Route("Services/{userID}/Delete/{id}")]
+        [Route("Services/{userID}/delete/{id}")]
         public HttpResponseMessage DeleteService(int id)
         {
             service_repo.Delete(id);

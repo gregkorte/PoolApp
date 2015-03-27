@@ -38,7 +38,7 @@
         }
 
         function _putCustomer(customer, call) {
-            var url = API + 'Customers/' + USERID + '/Edit/' + customer.ID;
+            var url = API + 'Customers/' + USERID + '/edit/' + customer.ID;
             console.log(url);
             $http.put(url)
             .success(function (customer) {
@@ -51,11 +51,9 @@
         }
 
         function _deleteCustomer(id, call) {
-            var url = API + 'Customers/' + USERID + '/Delete/' + id;
-            console.log(url);
+            var url = API + 'Customers/' + USERID + '/delete/' + id;
             $http.delete(url)
             .success(function (status) {
-                console.log(status);
                 call();
             })
             .error(function (err) {

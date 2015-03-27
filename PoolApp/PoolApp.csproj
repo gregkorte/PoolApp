@@ -234,7 +234,6 @@
     <Content Include="Angular\views\invoices\invoiceForm.html" />
     <Content Include="Angular\views\invoices\invoiceList.html" />
     <Content Include="Angular\views\invoices\invoiceProfile.html" />
-    <Content Include="Angular\views\nav.html" />
     <Content Include="Angular\views\products\productForm.html" />
     <Content Include="Angular\views\products\productList.html" />
     <Content Include="Angular\views\products\productProfile.html" />

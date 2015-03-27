@@ -1,14 +1,14 @@
 <div class="formContainer">
 <form name="newServiceForm" ng-submit="newServiceForm.$valid && add.NewService()" novalidate>
-<div class="form-group" ng-class="{'has-error': !add.newService.name}">
+<div class="form-group" ng-class="{'has-error': !add.newService.Name}">
   <label class="control-label">Service:</label>
   <input type="text" class="form-control shorten" ng-model="add.newService.Name" required />
 </div>
-<div class="form-group" ng-class="{'has-error': !add.newService.cost}">
+<div class="form-group" ng-class="{'has-error': !add.newService.Cost}">
   <label class="control-label">Cost:</label>
   <input type="text" class="form-control shorten" ng-model="add.newService.Cost" required />
 </div>
-<div class="form-group" ng-class="{'has-error': !add.newService.workUnit}">
+<div class="form-group" ng-class="{'has-error': !add.newService.WorkUnit}">
   <label class="control-label">Work Unit:</label>
   <input type="text" class="form-control shorten" ng-model="add.newService.WorkUnit" required />
 </div>

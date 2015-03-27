@@ -37,7 +37,7 @@ namespace PoolApp.Repositories
         public void Edit(Customer customer)
         {
             var q = _dbContext.Customers.Where(c => c.ID == customer.ID);
-            foreach (Customer dbCustomer in q)
+            foreach(Customer dbCustomer in q)
             {
                 dbCustomer.RouteDay = customer.RouteDay;
                 dbCustomer.FirstName = customer.FirstName;

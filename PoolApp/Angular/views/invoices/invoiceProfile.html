@@ -19,9 +19,9 @@
 
 	<div class="row invoiceToAddress">
 		<div class="col-xs-12 billToTitle">Bill to:</div>
-		<div class="col-xs-12">{{view.invoice[2].customer.firstName}} {{view.invoice[2].customer.lastName}}</div>
-		<div class="col-xs-12">{{view.invoice[2].customer.address}}</div>
-		<div class="col-xs-12">{{view.invoice[2].customer.city}}, {{view.invoice[2].customer.state}} {{view.invoice[2].customer.zipcode}}</div>
+		<div class="col-xs-12">{{view.invoice[2].customer.FirstName}} {{view.invoice[2].customer.LastName}}</div>
+		<div class="col-xs-12">{{view.invoice[2].customer.Address}}</div>
+		<div class="col-xs-12">{{view.invoice[2].customer.City}}, {{view.invoice[2].customer.State}} {{view.invoice[2].customer.Zipcode}}</div>
 	</div>
 
 	<div class="table-responsive table-condensed invoiceItemizedList" >
@@ -36,16 +36,16 @@
 			</thead>
 			<tbody>
 				<tr ng-repeat="service in view.invoice[1]">
-					<td class="col-xs-8">{{service.name}}</td>
-					<td class="col-xs-1">{{service.qty}}</td>
-					<td class="col-xs-1">{{service.cost | currency}}</td>
+					<td class="col-xs-8">{{service.Name}}</td>
+					<td class="col-xs-1">{{service.Qty}}</td>
+					<td class="col-xs-1">{{service.Cost | currency}}</td>
 					<td class="col-xs-2 text-right" ng-init="service.otherItem = service.cost * service.qty">{{service.otherItem | currency}}</td>
 				</tr>
 
 				<tr ng-repeat="product in view.invoice[0]">
-					<td class="col-xs-8">{{product.name}}</td>
-					<td class="col-xs-1">{{product.qty}}</td>
-					<td class="col-xs-1">{{product.cost | currency}}</td>
+					<td class="col-xs-8">{{product.Name}}</td>
+					<td class="col-xs-1">{{product.Qty}}</td>
+					<td class="col-xs-1">{{product.Cost | currency}}</td>
 					<td class="col-xs-2 text-right" ng-init="product.subtotalItem = product.qty * product.cost">{{product.subtotalItem | currency}}</td>
 				</tr>
 			</tbody>

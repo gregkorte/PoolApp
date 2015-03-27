@@ -1,82 +1,74 @@
-;(function(){
-  'use strict';
-  angular.module('poolApp')
-    .factory('invoiceFactory', function($rootScope, FIREBASE_URL, $http, $location){
+; (function () {
+    'use strict';
+    angular.module('poolApp')
+    .factory('invoiceFactory', function ($http, USERID, API) {
+        function _getInvoices(call) {
+            var url = API + 'Invoices/' + USERID;
+            $http.get(url)
+            .success(function (data) {
+                call(data.Data.invoices);
+            })
+            .error(function (err) {
+                console.log('get invoice error: ', err)
+            })
+        }
 
-      function _invoiceUrl(id){
-        if (id) {
-          return FIREBASE_URL + '/users/' + $rootScope.user.uid +
-            '/invoices/' + id + '.json?auth=' + $rootScope.user.token;
-        } else {
-            return FIREBASE_URL + '/users/' + $rootScope.user.uid +
-            '/invoices.json?auth=' +  $rootScope.user.token;
-          }
-      }
+        function _getInvoiceById(id, call) {
+            var url = API + 'Invoices/' + USERID + '/' + id;
+            $http.get(url)
+            .success(function (data) {
+                call(data.Data.invoice);
+            })
+            .error(function (err) {
+                console.log('get invoice by id error', err)
+            })
+        }
 
-      function getInvoice(id, cb){
-        $http.get(_invoiceUrl(id))
-          .success(function(data){
-            cb(data);
-            console.log('Success: Got invoice');
-          })
-          .error(function(err){
-            console.log('Fail: Could not get invoice');
-          });
-      }
+        function _postInvoice(invoice, call) {
+            var url = API + 'Invoices/' + USERID;
+            console.log(url);
+            $http.get(url, invoice)
+            .success(function (status) {
+                console.log(status);
+                call(status);
+            })
+            .error(function (err) {
+                console.log('post invoice error: ', err)
+            })
+        }
 
-      function editInvoice(id, invoice){
-        $http.put(_invoiceUrl(id), invoice)
-          .success(function(data){
-            $location.path('/invoices');
-            console.log('Success: Edited invoice');
-          })
-          .error(function(err){
-            console.log('Fail: Could not edit invoice');
-          });
-      }
+        function _putInvoice(invoice, call) {
+            var url = API + 'Invoices/' + USERID + '/edit/' + invoice.ID;
+            console.log(url);
+            $http.put(url)
+            .success(function (invoice) {
+                console.log("edit sent");
+                call(invoice);
+            })
+            .error(function (err) {
+                console.log('edit invoice error: ', err)
+            })
+        }
 
-      function getAllInvoices(cb){
-        $http.get(_invoiceUrl())
-          .success(function(data){
-            cb(data);
-            console.log('Success: Got all invoices');
-          })
-          .error(function(err){
-            console.log('Fail: Could not get all invoices');
-          });
-      }
+        function _deleteInvoice(id, call) {
+            var url = API + 'Invoices/' + USERID + '/delete/' + id;
+            console.log(url);
+            $http.delete(url)
+            .success(function (status) {
+                console.log(status);
+                call();
+            })
+            .error(function (err) {
+                console.log('delete invoice error: ', err)
+            })
+        }
 
-      function createInvoice(invoice, cb){
-        console.log(invoice);
-        $http.post(_invoiceUrl(), invoice)
-          .success(function(data){
-            cb(data);
-            $location.path('/invoices');
-            console.log('Success: Created invoice');
-          })
-          .error(function(err){
-            console.log('Fail: Could not create invoice');
-          });
-      }
-
-      function deleteInvoice(invoiceId, cb) {
-        $http.delete(_invoiceUrl(invoiceId))
-          .success(function(){
-            cb();
-            $location.path('/invoices');
-            console.log('Success: Deleted invoice');
-          })
-          .error(function(err){
-            console.log('Fail: Could not delete invoice');
-          });
-      }
-
-      return {
-        getInvoice: getInvoice,
-        editInvoice: editInvoice,
-        getAllInvoices: getAllInvoices,
-        createInvoice: createInvoice,
-        deleteInvoice: deleteInvoice
-      };
+        return {
+            getInvoices: _getInvoices,
+            getInvoiceById: _getInvoiceById,
+            postInvoice: _postInvoice,
+            putInvoice: _putInvoice,
+            deleteInvoice: _deleteInvoice
+        };
     })
 }());

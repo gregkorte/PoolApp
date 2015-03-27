@@ -18,12 +18,12 @@
 	        controller: 'CustomerController',
 	        controllerAs: 'add'
 	    })
-	    .when('/Customers/:id/:id', {
+	    .when('/Customers/:userId/:id', {
 	        templateUrl: 'Angular/views/customers/customerProfile.html',
 	        controller: 'ShowCustomerController',
 	        controllerAs: 'show'
 	    })
-	    .when('/Customers/:id/edit/:id', {
+	    .when('/Customers/:userId/edit/:id', {
 	        templateUrl: 'Angular/views/customers/customerForm.html',
 	        controller: 'EditCustomerController',
 	        controllerAs: 'add'
@@ -62,12 +62,12 @@
 	        controller: 'ProductController',
 	        controllerAs: 'add'
 	    })
-	    .when('/Products/:id/:id', {
+	    .when('/Products/:userId/:id', {
 	        templateUrl: 'Angular/views/products/productProfile.html',
 	        controller: 'ShowProductController',
 	        controllerAs: 'show'
 	    })
-	    .when('/Products/:id/edit/:id', {
+	    .when('/Products/:userId/edit/:id', {
 	        templateUrl: 'Angular/views/products/productForm.html',
 	        controller: 'EditProductController',
 	        controllerAs: 'add'
